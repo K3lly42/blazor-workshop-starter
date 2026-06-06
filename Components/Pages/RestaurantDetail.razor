@@ -1,0 +1,44 @@
+@page "/restaurants/{Id:int}"
+
+<PageTitle>Restaurant</PageTitle>
+
+@*
+    ============================================================
+    TODO (RestaurantDetail) — deine Aufgabe im Workshop:
+
+    1. Injiziere den RestaurantApiService.
+    2. Lade mit dem [Parameter] Id unten BEIDES:
+         - das Restaurant   -> GetRestaurantAsync(Id)
+         - seine Reviews     -> GetReviewsAsync(Id)
+       in OnInitializedAsync (oder OnParametersSetAsync).
+    3. Zeige einen Lade-Indikator, während die Daten geladen werden, und behandle
+       den "nicht gefunden"-Fall (GetRestaurantAsync kann null zurückgeben).
+    4. Zeige die Restaurant-Infos (Name, Cuisine, Adresse, Bild) und seine
+       Durchschnittsbewertung mit der <StarRating />-Komponente (ReadOnly-Modus) an.
+    5. Zeige die Liste der Reviews (Author, Sterne via <StarRating ReadOnly />,
+       Comment, Datum).
+    6. Rendere die <AddReview />-Komponente und übergib RestaurantId="Id".
+    7. Aktualisiere die Review-Liste, nachdem ein neues Review abgeschickt wurde.
+    ============================================================
+*@
+
+@* TODO: den API-Service injizieren. *@
+@* @inject RestaurantApiService Api *@
+
+<MudText Color="Color.Secondary">TODO: Restaurant #@Id mit seinen Reviews und dem Add-Review-Formular anzeigen.</MudText>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    // TODO: Felder für das Restaurant und seine Reviews, z. B.
+    // private RestaurantDto? restaurant;
+    // private List<ReviewDto>? reviews;
+
+    // TODO: Restaurant + Reviews hier laden.
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     restaurant = await Api.GetRestaurantAsync(Id);
+    //     reviews = await Api.GetReviewsAsync(Id);
+    // }
+}

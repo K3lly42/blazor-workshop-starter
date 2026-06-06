@@ -1,0 +1,40 @@
+@*
+    ============================================================
+    TODO (StarRating) — deine Aufgabe im Workshop:
+
+    Eine kleine, wiederverwendbare Sterne-Bewertungs-Komponente, die sowohl zur
+    ANZEIGE (z. B. die Durchschnittsbewertung eines Restaurants, die Sterne eines
+    Reviews) als auch zum BEARBEITEN (Auswahl einer Bewertung im AddReview-Formular)
+    verwendet wird.
+
+    1. Nimm folgende Parameter entgegen:
+         - [Parameter] int Value          -> die aktuelle Bewertung (0-5)
+         - [Parameter] bool ReadOnly       -> true = nur Anzeige, false = bearbeitbar
+         - [Parameter] EventCallback<int> ValueChanged  -> benachrichtige das Parent,
+           wenn der Benutzer einen neuen Wert wählt (das aktiviert auch @bind-Value).
+    2. Anzeige-Modus (ReadOnly == true): rendere 5 Sterne, gefüllt bis Value,
+       der Rest leer. Tipp: MudBlazor-Icons
+         Icons.Material.Filled.Star  /  Icons.Material.Filled.StarBorder
+       oder einfach ★ / ☆.
+    3. Bearbeiten-Modus (ReadOnly == false): ein Klick auf den n-ten Stern setzt
+       den Wert auf n und löst ValueChanged aus (await ValueChanged.InvokeAsync(n)).
+       Tipp: MudBlazor hat bereits <MudRating>, das dir das meiste davon abnimmt —
+       baue es zuerst selbst und vergleiche dann.
+    ============================================================
+*@
+
+<MudText Color="Color.Secondary">TODO: StarRating (Value=@Value, ReadOnly=@ReadOnly)</MudText>
+
+@code {
+    // TODO: der aktuelle Bewertungswert (0-5).
+    [Parameter]
+    public int Value { get; set; }
+
+    // TODO: nur Anzeige vs. bearbeitbar.
+    [Parameter]
+    public bool ReadOnly { get; set; } = true;
+
+    // TODO: dies auslösen, wenn der Benutzer einen neuen Wert wählt (aktiviert @bind-Value).
+    [Parameter]
+    public EventCallback<int> ValueChanged { get; set; }
+}

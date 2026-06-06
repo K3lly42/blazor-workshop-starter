@@ -1,0 +1,36 @@
+@page "/restaurants"
+
+<PageTitle>Restaurants</PageTitle>
+
+<MudText Typo="Typo.h4" Class="mb-4">Restaurants</MudText>
+
+@*
+    ============================================================
+    TODO (RestaurantList) — deine Aufgabe im Workshop:
+
+    1. Injiziere den RestaurantApiService (siehe @inject unten — bereits vorbereitet).
+    2. Lade die Restaurants beim Initialisieren der Seite
+       (überschreibe OnInitializedAsync und rufe GetRestaurantsAsync() auf).
+    3. Zeige während des Ladens einen Lade-Indikator an
+       (z. B. <MudProgressCircular Indeterminate="true" /> oder ein Skeleton).
+    4. Sobald geladen, rendere für jedes Restaurant eine <RestaurantCard /> und
+       übergib das RestaurantDto als Parameter.
+       Tipp: ein <MudGrid> mit <MudItem xs="12" sm="6" md="4"> pro Card sieht schön aus.
+    ============================================================
+*@
+
+@* TODO: den API-Service injizieren. *@
+@* @inject RestaurantApiService Api *@
+
+<MudText Color="Color.Secondary">TODO: die Liste der Restaurants laden und anzeigen.</MudText>
+
+@code {
+    // TODO: ein Feld, das die geladenen Restaurants hält, z. B.
+    // private List<RestaurantDto>? restaurants;
+
+    // TODO: die Daten hier laden.
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     restaurants = await Api.GetRestaurantsAsync();
+    // }
+}

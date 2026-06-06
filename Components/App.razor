@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <ResourcePreloader />
+    <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
+    <link rel="stylesheet" href="@Assets["app.css"]" />
+    <link rel="stylesheet" href="@Assets["RestaurantApp.styles.css"]" />
+
+    @* MudBlazor: benötigte Fonts + Stylesheet. *@
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+
+    <ImportMap />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <HeadOutlet @rendermode="InteractiveServer" />
+</head>
+
+<body>
+    @*
+        Globaler render mode für die gesamte App.
+        InteractiveServer wird benötigt, damit die interaktiven MudBlazor-Komponenten
+        (Snackbar, Dialoge, Popovers, Click-Handler) funktionieren.
+
+        WORKSHOP-HINWEIS: Später im Workshop wird dies geändert, um andere render
+        modes auszuprobieren (InteractiveAuto / InteractiveWebAssembly / render
+        modes pro Seite). Vorerst läuft alles interaktiv auf dem Server.
+    *@
+    <Routes @rendermode="InteractiveServer" />
+    <ReconnectModal />
+
+    @* MudBlazor JavaScript. *@
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+
+    <script src="@Assets["_framework/blazor.web.js"]"></script>
+</body>
+
+</html>

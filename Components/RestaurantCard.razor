@@ -1,0 +1,22 @@
+@*
+    ============================================================
+    TODO (RestaurantCard) — deine Aufgabe im Workshop:
+
+    1. Nimm einen [Parameter] vom Typ RestaurantDto entgegen (siehe unten).
+    2. Zeige Name, Cuisine, Adresse und Bild des Restaurants an.
+       Tipp: <MudCard>, <MudCardMedia Image="@Restaurant.ImageUrl" />,
+            <MudCardContent>.
+    3. Zeige die Durchschnittsbewertung mit der <StarRating />-Komponente im
+       ReadOnly-Modus an, z. B. <StarRating Value="(int)Restaurant.AvgRating" ReadOnly="true" />.
+    4. Verlinke die gesamte Card auf die Detailseite:
+       /restaurants/{Restaurant.Id}  (z. B. Href oder NavigationManager).
+    ============================================================
+*@
+
+<MudText Color="Color.Secondary">TODO: RestaurantCard für @(Restaurant?.Name ?? "—")</MudText>
+
+@code {
+    // TODO: das anzuzeigende Restaurant entgegennehmen.
+    [Parameter]
+    public RestaurantDto? Restaurant { get; set; }
+}

@@ -1,0 +1,40 @@
+@*
+    ============================================================
+    TODO (AddReview) — deine Aufgabe im Workshop:
+
+    1. Nimm einen [Parameter] int RestaurantId entgegen (siehe unten).
+    2. Baue eine <EditForm Model="model"> mit einem <DataAnnotationsValidator />
+       (CreateReviewDto trägt die Validierungs-Attribute bereits).
+       Füge eine <ValidationSummary /> oder pro Feld eine <ValidationMessage /> hinzu.
+    3. Felder:
+         - Author   -> Texteingabe (z. B. <MudTextField>)
+         - Stars    -> nutze deine <StarRating ReadOnly="false" @bind-Value="..." />
+         - Comment  -> mehrzeilige Texteingabe
+    4. Bei einem gültigen Submit (OnValidSubmit) rufe auf:
+         await Api.PostReviewAsync(RestaurantId, model);
+       setze danach das Formular zurück und benachrichtige das Parent,
+       damit es die Reviews neu laden kann — z. B. ein [Parameter] EventCallback OnReviewAdded.
+       Tipp: zeige eine Bestätigung mit ISnackbar an (injiziere es).
+    ============================================================
+*@
+
+@* TODO: den API-Service injizieren (und ISnackbar). *@
+@* @inject RestaurantApiService Api *@
+
+<MudText Color="Color.Secondary">TODO: Add-Review-Formular für Restaurant #@RestaurantId</MudText>
+
+@code {
+    // TODO: zu welchem Restaurant dieses Review gehört.
+    [Parameter]
+    public int RestaurantId { get; set; }
+
+    // TODO: das an die EditForm gebundene Formular-Model.
+    private CreateReviewDto model = new();
+
+    // TODO: einen gültigen Submit behandeln.
+    // private async Task SubmitAsync()
+    // {
+    //     await Api.PostReviewAsync(RestaurantId, model);
+    //     model = new();
+    // }
+}
