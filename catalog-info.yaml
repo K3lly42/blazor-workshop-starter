@@ -2,9 +2,29 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: blazor-workshop-starter
+  title: Restaurant App
+  description: >-
+    Blazor Web App (Frontend) für den Restaurant-Workshop. Zeigt Restaurants und
+    Bewertungen und konsumiert dafür die Restaurant API.
   annotations:
     github.com/project-slug: K3lly42/blazor-workshop-starter
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - dotnet
+    - blazor
+    - mudblazor
+    - frontend
+  links:
+    - url: https://api.bigfoot-htcu.com/scalar/v1
+      title: Workshop-API (Scalar)
+      icon: docs
 spec:
-  type: other
-  lifecycle: unknown
+  type: website
+  lifecycle: experimental
   owner: admins
+  # Verknüpft das Frontend mit der API (kind: API "restaurant-api").
+  consumesApis:
+    - restaurant-api
+  # Abhängigkeit vom API-Service (kind: Component "restaurant-api") für den Dependency-Graph.
+  dependsOn:
+    - component:restaurant-api

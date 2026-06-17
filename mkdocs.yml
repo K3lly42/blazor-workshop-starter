@@ -1,0 +1,10 @@
+site_name: Restaurant App
+site_description: Blazor-Frontend für den Restaurant-Workshop
+
+nav:
+  - Übersicht: index.md
+  - Architektur: architecture.md
+  - Entwicklung: development.md
+
+plugins:
+  - techdocs-core
